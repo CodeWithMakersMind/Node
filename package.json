@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
+   "scripts": {
+    "build": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon index.js"
   },
@@ -16,6 +17,8 @@
     "mongodb": "^4.13.0",
     "mongoose": "^6.8.1",
     "nodemailer": "^6.8.0",
-    "nodemon": "^2.0.20"
+    "nodemon": "^2.0.20",
+    "webpack": "^3.8.1"
   }
+  
 }

@@ -25,7 +25,7 @@ jobs:
         cache: 'npm'
         lfs: true
     - run: npm install --force    
-    - run: npm run build --if-present
+    - run: npm run build
     - run: npm test
     - name: Deploy 🚀
       uses: JamesIves/github-pages-deploy-action@v4

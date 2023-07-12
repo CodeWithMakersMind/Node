@@ -1,23 +1,36 @@
-name: Publish package to GitHub Packages
+name: Node.js deploy using actions
+
 on:
-  release:
-    types: [published]
+  push:
+    branches: [ "development" ]
+  pull_request:
+    branches: [ "development" ]
+  
 jobs:
   build:
+
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      packages: write
+
+    strategy:
+      matrix:
+        node-version: [18.x]
+# See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+
     steps:
-      - uses: actions/checkout@v3
-      # Setup .npmrc file to publish to GitHub Packages
-      - uses: actions/setup-node@v3
-        with:
-          node-version: '16.x'
-          registry-url: 'https://npm.pkg.github.com'
-          # Defaults to the user or organization that owns the workflow file
-          scope: '@octocat'
-      - run: npm ci
-      - run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+    - uses: actions/checkout@v3
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+        lfs: true
+    - run: npm install --force    
+    - run: npm run build
+    - run: npm test
+    - name: Deploy 🚀
+      uses: JamesIves/github-pages-deploy-action@v4
+      with:
+        token: ${{ secrets.ACCESS_TOKEN }}
+        branch: gh-pages # The branch the action should deploy to.
+        folder: build # The folder the action should deploy.
+        single-commit: true

@@ -34,5 +34,5 @@ jobs:
       - uses: akhileshns/aws-deploy@v3.12.12 # This is the action
         with:
           aws_api_key: ${{secrets.AWS_API_KEY}}
-          aws_app_name: "node-api" #Must be unique in Heroku
+          aws_app_name: "MyAPI" #Must be unique in Aws
           aws_email: "naveenmaddimsetti24@gmail.com"

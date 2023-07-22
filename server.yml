@@ -1,0 +1,28 @@
+service: RestApi
+frameworkVersion: "2"
+
+provider:
+  name: aws
+  runtime: nodejs 18.x
+  memorySize: 2048
+  stage: dev
+  timeout: 15
+  region: us-east-1
+  lambdaHashingVersion: 20201221
+
+  functions:
+    hello: 
+      handler: handler.hello
+      events:
+        - http: ANY /{proxy+}
+        - http: ANY /
+      environment:
+        variable2: value2
+        NODE_ENV: development
+        KEY: secret123
+        MONGO_DB_USER: srinivas6264
+        MONGO_DB_PASSWORD: blKYbFdVyoNc2x1A
+        MONGO_DB_HOST: mongodb+srv://srinivas6264:blKYbFdVyoNc2x1A@makersmind.kclzrvm.mongodb.net/
+        MONGO_DB_DATABASE: mongodb
+        AWS_ACCESS_KEY: AKIAUPRSML4ACQH4NWOF
+        AWS_SECRET_KEY: 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

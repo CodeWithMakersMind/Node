@@ -1,5 +1,5 @@
 {
-    "mongoUrl": "mongodb://localhost:27017/sandi",
+    "mongoUrl": "mongodb+srv://srinivas6264:blKYbFdVyoNc2x1A@makersmind.kclzrvm.mongodb.net",
     "port": 5000,
     "usersTableName" : "sandi_users"
 }

@@ -10,6 +10,7 @@ provider:
   timeout: 15
   region: us-east-1
   lambdaHashingVersion: 20201221
+ 
 
 functions:
   getApiCalls:
@@ -19,9 +20,3 @@ functions:
       - http: ANY /
     environment:
       variable2: value2
-      NODE_ENV: development
-      KEY: secret123
-      MONGO_DB_USER: srinivas6264
-      MONGO_DB_PASSWORD: blKYbFdVyoNc2x1A
-      MONGO_DB_HOST: mongodb+srv://srinivas6264:blKYbFdVyoNc2x1A@makersmind.kclzrvm.mongodb.net/RestApi
-      MONGO_DB_DATABASE: RestApi

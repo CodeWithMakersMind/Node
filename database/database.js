@@ -21,6 +21,8 @@ module.exports = connectToDatabase = async () => {
     serverSelectionTimeoutMS: 5000, // Keep trying to send operations for 5 seconds
     socketTimeoutMS: 45000, // Close sockets after 45 seconds of inactivity
     family: 4 // Use IPv4, skip trying IPv6
+
+    // mongodb+srv://srinivas6264:blKYbFdVyoNc2x1A@makersmind.kclzrvm.mongodb.net/
 }
   return await mongoose.connect("mongodb+srv://srinivas6264:blKYbFdVyoNc2x1A@makersmind.kclzrvm.mongodb.net", options).then(db => { 
     console.log("connected to database")

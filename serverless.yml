@@ -2,7 +2,6 @@ service: RestApi
 frameworkVersion: "3"
 
 provider:
-  configValidationMode: off
   name: aws
   runtime: nodejs18.x
   memorySize: 2048
@@ -14,9 +13,7 @@ provider:
 
 functions:
   getApiCalls:
-    handler: handler.hello
+    handler: index.handler
     events:
       - http: ANY /{proxy+}
       - http: ANY /
-    environment:
-      variable2: value2

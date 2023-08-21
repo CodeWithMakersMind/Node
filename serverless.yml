@@ -13,7 +13,13 @@ provider:
 
 functions:
   getApiCalls:
-    handler: index.handler
+    handler: getApiCalls/index.handler
     events:
-      - http: ANY /{proxy+}
-      - http: ANY /
+      - http:
+          path: users/test
+          method: GET
+          cors: true
+      - http:
+          path: users/signup
+          method: POST
+          cors: true      

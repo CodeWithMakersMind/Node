@@ -13,7 +13,7 @@ provider:
 
 functions:
   getApiCalls:
-    handler: index.handler
+    handler: getApiCalls/index.handler
     events:
       - http:
           path: users/test

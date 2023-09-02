@@ -7,7 +7,7 @@ provider:
   memorySize: 2048
   stage: dev
   timeout: 15
-  region: us-east-1
+  region: ap-south-1
   lambdaHashingVersion: 20201221
  
 

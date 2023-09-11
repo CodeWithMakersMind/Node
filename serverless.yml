@@ -1,4 +1,4 @@
-service: RestApi
+service: Api
 frameworkVersion: "3"
 
 provider:
@@ -12,8 +12,8 @@ provider:
  
 
 functions:
-  getApiCalls:
-    handler: getApiCalls/index.handler
+  ApiCalls:
+    handler: ApiCalls/index.handler
     events:
       - http:
           path: users/test

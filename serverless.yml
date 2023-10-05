@@ -4,11 +4,10 @@ frameworkVersion: "3"
 provider:
   name: aws
   runtime: nodejs18.x
-  memorySize: 2048
+  memorySize: 1024
   stage: dev
   timeout: 15
-  region: us-east-1
-  
+  region: ap-south-1
   lambdaHashingVersion: 20201221
  
 

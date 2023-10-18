@@ -4,16 +4,16 @@ frameworkVersion: "3"
 provider:
   name: aws
   runtime: nodejs18.x
-  memorySize: 1024
-  stage: prod
+  memorySize: 2048
+  stage: dev
   timeout: 15
   region: us-east-1
   lambdaHashingVersion: 20201221
  
 
 functions:
-  getApiCalls:
-    handler: getApiCalls/index.handler
+  postApiCalls:
+    handler: postApiCalls/index.handler
     events:
       - http:
           path: users/test
